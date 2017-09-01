@@ -43,17 +43,6 @@ class Home extends Component {
             <Text>Fetch Recipes</Text>
           </TouchableHighlight>
         </View>
-        <ScrollView style={styles.scrollSection} >
-          {!this.state.searching && this.recipes().map((recipe) => {
-            return <TouchableHighlight key={recipe.id}  style={styles.searchButton} onPress={ () => this.props.navigate({ key: 'Detail', id: recipe.id}) }>
-            <View>
-              <Image source={ { uri: recipe.thumbnail } } style={appStyle.resultImage} />
-              <Text style={ appStyle.resultText } >{recipe.title}</Text>
-            </View>
-          </TouchableHighlight>
-          })}
-          {this.state.searching ? <Text>Searching...</Text> : null }
-        </ScrollView>
       </View>
     )
   }
