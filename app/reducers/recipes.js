@@ -10,6 +10,5 @@ export const searchedRecipes = createReducer({}, {
     });
     return newState;
   },
-
 });
 
