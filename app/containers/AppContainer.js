@@ -28,8 +28,6 @@ class AppContainer extends Component {
 
   constructor(props: any, context: any) {
     super(props, context);
-    this._render = this._render.bind(this);
-    this._renderScene = this._renderScene.bind(this);
   }
 
   render() {
@@ -41,7 +39,7 @@ class AppContainer extends Component {
     );
   }
 
-  _render(transitionProps) {
+  _render = (transitionProps) => {
     const scenes = transitionProps.scenes.map((scene) => {
       const sceneProps = {
         ...transitionProps,
@@ -57,7 +55,7 @@ class AppContainer extends Component {
     );
   }
 
-  _renderScene(sceneProps) {
+  _renderScene = (sceneProps) => {
     return (
       <SceneContainer
         {...sceneProps}

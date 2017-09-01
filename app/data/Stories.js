@@ -8,7 +8,7 @@
 
 module.exports = {
     stories: {
-        "onNow": {
+        "On Now": {
             coverImgURL: "",
             gallery: [
                 {
