@@ -15,34 +15,32 @@ const {
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { searching: false, ingredientsInput: '' }
+    //this.state = { searching: false, ingredientsInput: '' }
   }
 
-  searchPressed() {
-    this.setState({ searching: true })
-    this.props.fetchRecipes(this.state.ingredientsInput).then( (res) => {
-      this.setState({searching: false })
-    });
-  }
-
-  recipes() {
-    return Object.keys(this.props.searchedRecipes).map(key => this.props.searchedRecipes[key])
+  // searchPressed() {
+  //   this.setState({ searching: true })
+  //   this.props.fetchRecipes(this.state.ingredientsInput).then( (res) => {
+  //     this.setState({searching: false })
+  //   });
+  // }
+  //
+  // recipes() {
+  //   return Object.keys(this.props.searchedRecipes).map(key => this.props.searchedRecipes[key])
+  // }
+  _onPressButton = () => {
+    alert("press here");
   }
 
   render() {
+    let imgURL = "";
     return (
       <View style={styles.scene}>
-        <View style={styles.searchSection}>
-          <TextInput style={styles.searchInput}
-            returnKeyType="search"
-            placeholder="Ingredients (comma delimited)"
-            onChangeText={(ingredientsInput) => this.setState({ingredientsInput})}
-            value={this.state.ingredientsInput}
-          />
-          <TouchableHighlight style={styles.searchButton} onPress={ () => this.searchPressed() }>
-            <Text>Fetch Recipes</Text>
-          </TouchableHighlight>
-        </View>
+        <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+          <View>
+            <Image source={require('../resources/images/22jumpstreet.jpg')} />
+          </View>
+        </TouchableHighlight>
       </View>
     )
   }
