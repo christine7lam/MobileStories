@@ -34,11 +34,10 @@ export function setStory(categoryIndex, index) {
         }
     }
     let getStory = storiesPerCat.gallery[index];
-    //alert(JSON.stringify(getStory));
 
     return {
         type: types.SET_STORY,
-        coverImgURL: coverImgURL,
+        coverImgURL,
         categoryIndex,
         index,
         story: getStory
