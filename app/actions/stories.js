@@ -33,10 +33,3 @@ export function setStory(category = 'On Now', index) {
         story: getStory
     }
 }
-
-export function setStoryIndex(index) {
-    return {
-        type: types.SET_INDEX,
-        index
-    }
-}

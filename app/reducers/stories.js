@@ -29,9 +29,4 @@ export const browseStories = createReducer(initialState, {
         newState.story.index = action.index;
         return newState;
     },
-    [types.SET_INDEX](state, action) {
-        let newState = {...state}
-        newState.story.index = action.index++;
-        return newState;
-    }
 });
