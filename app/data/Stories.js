@@ -7,6 +7,7 @@
 'use strict';
 
 module.exports = {
+    categories: ["On Now", "My Library", "Discover", "Guide"],
     stories: {
         "On Now": {
             coverImgURL: "",
@@ -61,12 +62,12 @@ module.exports = {
                     imgURL: require('../resources/images/ex_machina_xlg.jpg')
                 },
                 {
-                    title: "image4",
+                    title: "image5",
                     desp: "",
                     imgURL: require('../resources/images/five_hundred_days_of_summer.jpg')
                 },
                 {
-                    title: "image4",
+                    title: "image6",
                     desp: "",
                     imgURL: require('../resources/images/Gattica—MV000521070000.jpg')
                 },

@@ -22,7 +22,7 @@ class Home extends Component {
   }
 
   _onPressButton = () => {
-    this.props.setStory("On Now", this.props.browseStories.story.index);
+    this.props.setStory(this.props.browseStories.category.index, this.props.browseStories.story.index);
     let nextImg = this.props.browseStories.story.content.imgURL+ '';
     this.setState({imgURL: this.props.browseStories.story.content.imgURL })
   }

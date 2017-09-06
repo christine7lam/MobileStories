@@ -26,7 +26,7 @@ export const browseStories = createReducer(initialState, {
         let newState = {...state}
         newState.story.content = action.story;
         newState.story.index = action.index;
-        newState.story.index = action.index;
+        newState.category.index = action.categoryIndex;
         return newState;
     },
 });
