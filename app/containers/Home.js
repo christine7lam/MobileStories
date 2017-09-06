@@ -18,17 +18,15 @@ import { bindActionCreators } from 'redux';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg'), index: 0}
+    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg')}
   }
 
   _onPressButton = () => {
     this.props.setStory(this.props.browseStories.category.index, this.props.browseStories.story.index);
-    let nextImg = this.props.browseStories.story.content.imgURL+ '';
     this.setState({imgURL: this.props.browseStories.story.content.imgURL })
   }
 
   render() {
-    let imgURL = require('../resources/images/22jumpstreet.jpg');
     return (
       <View style={styles.scene}>
         <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
