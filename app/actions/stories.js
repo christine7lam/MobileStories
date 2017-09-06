@@ -27,7 +27,7 @@ export function setStory(categoryIndex, index) {
     if (index < gallery.length -1) {
         index++;
     } else {
-        if (categoryIndex < 3) {
+        if (categoryIndex < Stories.categories.length - 1) {
             categoryIndex++;
             index = 0;
             setStory(categoryIndex, index);
