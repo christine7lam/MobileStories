@@ -18,20 +18,22 @@ import { bindActionCreators } from 'redux';
 class Home extends Component {
   constructor(props) {
     super(props)
+    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg'), index: 0}
   }
 
   _onPressButton = () => {
-    alert("press here");
-    this.props.setStory();
+    this.props.setStory("On Now", this.props.browseStories.story.index);
+    let nextImg = this.props.browseStories.story.content.imgURL+ '';
+    this.setState({imgURL: this.props.browseStories.story.content.imgURL })
   }
 
   render() {
-    let imgURL = "";
+    let imgURL = require('../resources/images/22jumpstreet.jpg');
     return (
       <View style={styles.scene}>
         <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
           <View>
-            <Image source={require('../resources/images/22jumpstreet.jpg')} />
+            <Image source={this.state.imgURL} />
           </View>
         </TouchableHighlight>
       </View>
@@ -64,7 +66,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    searchedRecipes: state.searchedRecipes
+    searchedRecipes: state.searchedRecipes,
+    browseStories: state.browseStories
   };
 }
 
