@@ -13,7 +13,7 @@ export function setStory(category = 'On Now', index) {
     let stories = Stories.stories;
     let storiesPerCat = stories[category];
     let coverImgURL = storiesPerCat.coverImgURL;
-    let getStory = storiesPerCat.gallery[0][index];
+    let getStory = storiesPerCat.gallery[index];
 
     return {
         type: types.SET_STORY,

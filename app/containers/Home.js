@@ -12,24 +12,17 @@ const {
   StyleSheet,
 } = ReactNative;
 
+import { ActionCreators } from '../actions';
+import { bindActionCreators } from 'redux';
+
 class Home extends Component {
   constructor(props) {
     super(props)
-    //this.state = { searching: false, ingredientsInput: '' }
   }
 
-  // searchPressed() {
-  //   this.setState({ searching: true })
-  //   this.props.fetchRecipes(this.state.ingredientsInput).then( (res) => {
-  //     this.setState({searching: false })
-  //   });
-  // }
-  //
-  // recipes() {
-  //   return Object.keys(this.props.searchedRecipes).map(key => this.props.searchedRecipes[key])
-  // }
   _onPressButton = () => {
     alert("press here");
+    this.props.setStory();
   }
 
   render() {
@@ -75,4 +68,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Home);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ActionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
