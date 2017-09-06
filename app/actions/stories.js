@@ -29,9 +29,9 @@ export function setStory(categoryIndex, index) {
     } else {
         if (categoryIndex < 3) {
             categoryIndex++;
+            index = 0;
+            setStory(categoryIndex, index);
         }
-        index = 0;
-        setStory(categoryIndex, index);
     }
     let getStory = storiesPerCat.gallery[index];
     //alert(JSON.stringify(getStory));
