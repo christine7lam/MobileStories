@@ -13,25 +13,26 @@ module.exports = {
             coverImgURL: "",
             gallery: [
                 {
-                    index: 0,
+                    title: "image1",
+                    desp: "",
+                    imgURL: require('../resources/images/nextStory.jpg')
+                },
+                {
                     title: "image1",
                     desp: "",
                     imgURL: require('../resources/images/22jumpstreet.jpg')
                 },
                 {
-                    index: 1,
                     title: "image2",
                     desp: "",
                     imgURL: require('../resources/images/amazing_spiderman_two_ver11_xlg.jpg')
                 },
                 {
-                    index: 2,
                     title: "image3",
                     desp: "",
                     imgURL: require('../resources/images/american_hustle_xlg.jpg')
                 },
                 {
-                    index: 3,
                     title: "image4",
                     desp: "",
                     imgURL: require('../resources/images/ant_man_ver3_xlg.jpg')
@@ -41,6 +42,11 @@ module.exports = {
         "My Library": {
             coverImgURL: "",
             gallery: [
+                {
+                    title: "image1",
+                    desp: "",
+                    imgURL: require('../resources/images/nextStory.jpg')
+                },
                 {
                     title: "image1",
                     desp: "",
@@ -79,6 +85,11 @@ module.exports = {
                 {
                     title: "image1",
                     desp: "",
+                    imgURL: require('../resources/images/nextStory.jpg')
+                },
+                {
+                    title: "image1",
+                    desp: "",
                     imgURL: require('../resources/images/pacific_rim_ver3.jpg')
                 },
                 {
@@ -96,6 +107,11 @@ module.exports = {
         "Guide": {
             coverImgURL: "",
             gallery: [
+                {
+                    title: "image1",
+                    desp: "",
+                    imgURL: require('../resources/images/nextStory.jpg')
+                },
                 {
                     title: "image1",
                     desp: "",
