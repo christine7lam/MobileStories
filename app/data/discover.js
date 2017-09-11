@@ -7,9 +7,10 @@
 'use strict';
 
 module.exports = {
-    categories: ["On Now", "My Library", "Discover", "Guide"],
+    title: "Discover",
+    categories: ["Browse", "Popular TV Shows", "Popular Movies"],
     stories: {
-        "On Now": {
+        "Browse": {
             coverImgURL: "",
             gallery: [
                 {
@@ -39,7 +40,7 @@ module.exports = {
                 },
             ]
         },
-        "My Library": {
+        "Popular TV Shows": {
             coverImgURL: "",
             gallery: [
                 {
@@ -79,7 +80,7 @@ module.exports = {
                 },
             ]
         },
-        "Discover": {
+        "Popular Movies": {
             coverImgURL: "",
             gallery: [
                 {
@@ -101,31 +102,6 @@ module.exports = {
                     title: "image3",
                     desp: "",
                     imgURL: require('../resources/images/transformers_dark_of_the_moon_ver5_xlg.jpg')
-                }
-            ]
-        },
-        "Guide": {
-            coverImgURL: "",
-            gallery: [
-                {
-                    title: "image1",
-                    desp: "",
-                    imgURL: require('../resources/images/nextStory.jpg')
-                },
-                {
-                    title: "image1",
-                    desp: "",
-                    imgURL: require('../resources/images/Breaking-Bad.jpg')
-                },
-                {
-                    title: "image2",
-                    desp: "",
-                    imgURL: require('../resources/images/Californication.jpg')
-                },
-                {
-                    title: "image3",
-                    desp: "",
-                    imgURL: require('../resources/images/dexter.jpg')
                 }
             ]
         }

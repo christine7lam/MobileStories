@@ -7,7 +7,7 @@
 'use strict';
 
 import * as types from './types'
-import Stories from '../data/Stories'
+import Stories from '../data/onNow'
 
 
 /**
