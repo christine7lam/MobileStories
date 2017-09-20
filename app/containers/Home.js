@@ -9,6 +9,8 @@ const {
   Image,
   Text,
   TouchableHighlight,
+  LayoutAnimation,
+  TouchableOpacity,
   StyleSheet,
 } = ReactNative;
 
@@ -20,23 +22,29 @@ import FadeInView from './Animations/FadeInView';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg')}
+    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg'),
+        w: 100,
+        h: 100
+    }
   }
 
-  _onPressButton = () => {
+  _onPress = () => {
     this.props.setStory(this.props.browseStories.category.index, this.props.browseStories.story.index);
     this.setState({imgURL: this.props.browseStories.story.content.imgURL })
+    LayoutAnimation.spring();
+    this.setState({w: this.state.w + 15, h: this.state.h + 15})
   }
 
   render() {
     return (
-      <View style={styles.scene}>
-        <FadeInView style={{width: 250, height: 50, backgroundColor: '#ccc'}}>
-          <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-              <Image source={this.state.imgURL} />
-          </TouchableHighlight>
-        </FadeInView>
-      </View>
+        <View style={styles.scene}>
+          {/*<View style={[styles.box, {width: this.state.w, height: this.state.h}]} />*/}
+          <TouchableOpacity onPress={this._onPress} underlayColor="white">
+            <View>
+                <Image source={this.state.imgURL} />
+            </View>
+          </TouchableOpacity>
+        </View>
     )
   }
 }
@@ -61,6 +69,18 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 0.7,
+  },
+  box: {
+    width: 200,
+    height: 200,
+    backgroundColor: 'red',
+  },
+  button: {
+    backgroundColor: 'black',
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 
