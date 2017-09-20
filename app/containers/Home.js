@@ -22,9 +22,7 @@ import FadeInView from './Animations/FadeInView';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg'),
-        w: 100,
-        h: 100
+    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg')
     }
   }
 
@@ -32,13 +30,11 @@ class Home extends Component {
     this.props.setStory(this.props.browseStories.category.index, this.props.browseStories.story.index);
     this.setState({imgURL: this.props.browseStories.story.content.imgURL })
     LayoutAnimation.spring();
-    this.setState({w: this.state.w + 15, h: this.state.h + 15})
   }
 
   render() {
     return (
         <View style={styles.scene}>
-          {/*<View style={[styles.box, {width: this.state.w, height: this.state.h}]} />*/}
           <TouchableOpacity onPress={this._onPress} underlayColor="white">
             <View>
                 <Image source={this.state.imgURL} />
