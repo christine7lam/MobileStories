@@ -15,6 +15,8 @@ const {
 import { ActionCreators } from '../actions';
 import { bindActionCreators } from 'redux';
 
+import FadeInView from './Animations/FadeInView';
+
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -29,11 +31,11 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.scene}>
-        <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-          <View>
-            <Image source={this.state.imgURL} />
-          </View>
-        </TouchableHighlight>
+        <FadeInView style={{width: 250, height: 50, backgroundColor: '#ccc'}}>
+          <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+              <Image source={this.state.imgURL} />
+          </TouchableHighlight>
+        </FadeInView>
       </View>
     )
   }
