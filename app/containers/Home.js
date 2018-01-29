@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactNative from 'react-native';
+
+import Swipeout from 'react-native-swipeout';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+
 import { appStyle } from '../styles';
 const {
   ScrollView,
@@ -11,6 +15,7 @@ const {
   TouchableHighlight,
   LayoutAnimation,
   TouchableOpacity,
+  PanResponder,
   StyleSheet,
 } = ReactNative;
 
@@ -22,8 +27,13 @@ import FadeInView from './Animations/FadeInView';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg')
+    this.state = { imgURL: require('../resources/images/22jumpstreet.jpg'),
+
     }
+  }
+
+  componentWillMount() {
+
   }
 
   _onPress = () => {
@@ -33,14 +43,19 @@ class Home extends Component {
   }
 
   render() {
+      var swipeoutBtns = [
+          {
+              text: 'Button'
+          }
+      ]
     return (
-        <View style={styles.scene}>
+        <Swipeout style={styles.scene} left={swipeoutBtns} right={swipeoutBtns}>
           <TouchableOpacity onPress={this._onPress} underlayColor="white">
             <View>
                 <Image source={this.state.imgURL} />
             </View>
           </TouchableOpacity>
-        </View>
+        </Swipeout>
     )
   }
 }
